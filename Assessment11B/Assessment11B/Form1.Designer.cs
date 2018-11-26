@@ -39,15 +39,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.passwordGroupBox = new System.Windows.Forms.GroupBox();
+            this.passwordBox = new System.Windows.Forms.TextBox();
+            this.passwordLabel = new System.Windows.Forms.Label();
             this.numbersCheck = new System.Windows.Forms.CheckBox();
             this.specialCheck = new System.Windows.Forms.CheckBox();
             this.spaceCheck = new System.Windows.Forms.CheckBox();
             this.uppercaseCheck = new System.Windows.Forms.CheckBox();
             this.lowerCheck = new System.Windows.Forms.CheckBox();
-            this.passwordLabel = new System.Windows.Forms.Label();
-            this.passwordBox = new System.Windows.Forms.TextBox();
-            this.resultLabel = new System.Windows.Forms.Label();
-            this.countLabel = new System.Windows.Forms.Label();
             this.passwordGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,7 +78,7 @@
             // 
             // searchReplaceButton
             // 
-            this.searchReplaceButton.Location = new System.Drawing.Point(433, 99);
+            this.searchReplaceButton.Location = new System.Drawing.Point(490, 92);
             this.searchReplaceButton.Name = "searchReplaceButton";
             this.searchReplaceButton.Size = new System.Drawing.Size(99, 23);
             this.searchReplaceButton.TabIndex = 3;
@@ -98,7 +96,7 @@
             // 
             // replaceBox
             // 
-            this.replaceBox.Location = new System.Drawing.Point(490, 73);
+            this.replaceBox.Location = new System.Drawing.Point(375, 118);
             this.replaceBox.Name = "replaceBox";
             this.replaceBox.Size = new System.Drawing.Size(100, 20);
             this.replaceBox.TabIndex = 5;
@@ -133,7 +131,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(518, 57);
+            this.label2.Location = new System.Drawing.Point(402, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 9;
@@ -154,6 +152,23 @@
             this.passwordGroupBox.TabIndex = 10;
             this.passwordGroupBox.TabStop = false;
             this.passwordGroupBox.Text = "Check A Password";
+            // 
+            // passwordBox
+            // 
+            this.passwordBox.Location = new System.Drawing.Point(84, 173);
+            this.passwordBox.Name = "passwordBox";
+            this.passwordBox.Size = new System.Drawing.Size(100, 20);
+            this.passwordBox.TabIndex = 11;
+            this.passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
+            // 
+            // passwordLabel
+            // 
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Location = new System.Drawing.Point(6, 176);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(53, 13);
+            this.passwordLabel.TabIndex = 12;
+            this.passwordLabel.Text = "Password";
             // 
             // numbersCheck
             // 
@@ -210,47 +225,11 @@
             this.lowerCheck.Text = "lowercase";
             this.lowerCheck.UseVisualStyleBackColor = true;
             // 
-            // passwordLabel
-            // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(6, 176);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(53, 13);
-            this.passwordLabel.TabIndex = 12;
-            this.passwordLabel.Text = "Password";
-            // 
-            // passwordBox
-            // 
-            this.passwordBox.Location = new System.Drawing.Point(84, 173);
-            this.passwordBox.Name = "passwordBox";
-            this.passwordBox.Size = new System.Drawing.Size(100, 20);
-            this.passwordBox.TabIndex = 11;
-            this.passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
-            // 
-            // resultLabel
-            // 
-            this.resultLabel.AutoSize = true;
-            this.resultLabel.Location = new System.Drawing.Point(402, 125);
-            this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(48, 13);
-            this.resultLabel.TabIndex = 11;
-            this.resultLabel.Text = "Results: ";
-            // 
-            // countLabel
-            // 
-            this.countLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.countLabel.Location = new System.Drawing.Point(460, 125);
-            this.countLabel.Name = "countLabel";
-            this.countLabel.Size = new System.Drawing.Size(100, 23);
-            this.countLabel.TabIndex = 12;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(833, 424);
-            this.Controls.Add(this.countLabel);
-            this.Controls.Add(this.resultLabel);
             this.Controls.Add(this.passwordGroupBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -292,8 +271,6 @@
         private System.Windows.Forms.CheckBox lowerCheck;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox passwordBox;
-        private System.Windows.Forms.Label resultLabel;
-        private System.Windows.Forms.Label countLabel;
     }
 }
 

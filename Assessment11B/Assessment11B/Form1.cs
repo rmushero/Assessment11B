@@ -29,68 +29,25 @@ namespace Assessment11B
 
         private void passwordBox_TextChanged(object sender, EventArgs e)
         {
-            if (passwordBox.Text != "")
-            {
-                verifyPassword();
-            }
+            verifyPassword();
+            
         }
 
         private void searchReplaceButton_Click(object sender, EventArgs e)
         {
-            searchListBox.Items.Clear();
-            if (replaceBox.Text == "")
-            {
-                SearchText();
-            }
-            else
-            {
-                SearchText();
-              //  ReplaceText();
-            }
+
         }
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            passwordBox.Text = "";
-            pasteBin.Text = "";
-            searchBox.Text = "";
-            replaceBox.Text = "";
-            searchListBox.Items.Clear();
-        }
 
-        private void SearchText()
-        {
-            int count = 0;
-            string searchString = searchBox.Text;
-            string pasteText = pasteBin.Text;
-            char[] delim = { ' ',',','.' };
-            pasteText = pasteText.Trim();
-            string[] token = pasteText.Split(delim);
-            int startPos = 0;
-            foreach (string word in token)
-            {
-
-                if (word.Contains(searchString))
-                {
-                    startPos = pasteText.IndexOf(word);
-                    searchListBox.Items.Add(startPos);
-                    count++;
-
-                }
-            }
-            countLabel.Text = Convert.ToString(count);
         }
 
         private void verifyPassword()
         {
             string checkMe = passwordBox.Text;
-            spaceCheck.Checked = false;
-            uppercaseCheck.Checked = false;
-            lowerCheck.Checked = false;
-            numbersCheck.Checked = false;
-            specialCheck.Checked = false;
-            passwordBox.BackColor = Color.Red;
 
+       
 
             if (checkMe != "")
             {
@@ -143,11 +100,24 @@ namespace Assessment11B
                     }
                 }
             }
+            else
+            {
+                spaceCheck.Checked = false;
+                uppercaseCheck.Checked = false;
+                lowerCheck.Checked = false;
+                numbersCheck.Checked = false;
+                specialCheck.Checked = false;
+                passwordBox.BackColor = Color.Red;
+            }
+
                 if (specialCheck.Checked == true && spaceCheck.Checked == true && lowerCheck.Checked == true && uppercaseCheck.Checked == true && numbersCheck.Checked == true)
             {
                 passwordBox.BackColor = Color.Green;
             }
-           
+            else
+            {
+                passwordBox.BackColor = Color.Red;
+            }
         }
        
     }
