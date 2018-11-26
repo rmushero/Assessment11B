@@ -46,8 +46,13 @@ namespace Assessment11B
         private void verifyPassword()
         {
             string checkMe = passwordBox.Text;
+            spaceCheck.Checked = false;
+            uppercaseCheck.Checked = false;
+            lowerCheck.Checked = false;
+            numbersCheck.Checked = false;
+            specialCheck.Checked = false;
+            passwordBox.BackColor = Color.Red;
 
-       
 
             if (checkMe != "")
             {
@@ -100,24 +105,12 @@ namespace Assessment11B
                     }
                 }
             }
-            else
-            {
-                spaceCheck.Checked = false;
-                uppercaseCheck.Checked = false;
-                lowerCheck.Checked = false;
-                numbersCheck.Checked = false;
-                specialCheck.Checked = false;
-                passwordBox.BackColor = Color.Red;
-            }
-
+           
                 if (specialCheck.Checked == true && spaceCheck.Checked == true && lowerCheck.Checked == true && uppercaseCheck.Checked == true && numbersCheck.Checked == true)
             {
                 passwordBox.BackColor = Color.Green;
             }
-            else
-            {
-                passwordBox.BackColor = Color.Red;
-            }
+            
         }
        
     }

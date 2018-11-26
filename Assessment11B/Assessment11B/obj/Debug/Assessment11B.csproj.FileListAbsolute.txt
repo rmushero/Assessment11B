@@ -7,3 +7,12 @@ C:\Users\Rodney\Desktop\Week 11 homework\Assessment11B\Assessment11B\obj\Debug\A
 C:\Users\Rodney\Desktop\Week 11 homework\Assessment11B\Assessment11B\obj\Debug\Assessment11B.csproj.GenerateResource.Cache
 C:\Users\Rodney\Desktop\Week 11 homework\Assessment11B\Assessment11B\obj\Debug\Assessment11B.exe
 C:\Users\Rodney\Desktop\Week 11 homework\Assessment11B\Assessment11B\obj\Debug\Assessment11B.pdb
+C:\Users\Rodney\Source\Repos\rmushero\Assessment11B\Assessment11B\Assessment11B\bin\Debug\Assessment11B.exe.config
+C:\Users\Rodney\Source\Repos\rmushero\Assessment11B\Assessment11B\Assessment11B\obj\Debug\Assessment11B.exe
+C:\Users\Rodney\Source\Repos\rmushero\Assessment11B\Assessment11B\Assessment11B\obj\Debug\Assessment11B.pdb
+C:\Users\Rodney\Source\Repos\rmushero\Assessment11B\Assessment11B\Assessment11B\bin\Debug\Assessment11B.exe
+C:\Users\Rodney\Source\Repos\rmushero\Assessment11B\Assessment11B\Assessment11B\bin\Debug\Assessment11B.pdb
+C:\Users\Rodney\Source\Repos\rmushero\Assessment11B\Assessment11B\Assessment11B\obj\Debug\Assessment11B.csprojResolveAssemblyReference.cache
+C:\Users\Rodney\Source\Repos\rmushero\Assessment11B\Assessment11B\Assessment11B\obj\Debug\Assessment11B.Form1.resources
+C:\Users\Rodney\Source\Repos\rmushero\Assessment11B\Assessment11B\Assessment11B\obj\Debug\Assessment11B.Properties.Resources.resources
+C:\Users\Rodney\Source\Repos\rmushero\Assessment11B\Assessment11B\Assessment11B\obj\Debug\Assessment11B.csproj.GenerateResource.Cache
