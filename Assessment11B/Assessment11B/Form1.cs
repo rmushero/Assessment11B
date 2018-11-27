@@ -35,14 +35,22 @@ namespace Assessment11B
 
         private void searchReplaceButton_Click(object sender, EventArgs e)
         {
+            List<int> positions = new List<int>();
+            string searchString = searchBox.Text;
+            string pastedText = pasteBin.Text;
+            string pasteString = replaceBox.Text;
+            string replaceText = replaceBox.Text;
+
             ClearSome();
+
             if (replaceBox.Text != "")
             {
-                ReplaceText();
+                searchText(positions, pastedText, searchString);
+                ReplaceText(positions, pastedText, replaceText, searchString);
             }
             else
             {
-                searchText();
+                searchText(positions, pastedText, searchString);
             }
         }
 
@@ -121,52 +129,30 @@ namespace Assessment11B
             
         }
 
-        private void searchText()
-        {
-           int count = 0;
-            int place = 0;
+        private void searchText(List<int> positionList, string pastedText, string searchString)
+        {          
             int i = 0;
-          
-            string searchString = searchBox.Text;
-            string pastedText = pasteBin.Text;
-            List<int> positions = new List<int>();
             while ((i < pastedText.Length) && (i = pastedText.IndexOf(searchString, i)) != -1 )
             {
-                positions.Add(i);
+                positionList.Add(i);
                 i += searchString.Length;
             }
 
-            foreach (int position in positions)
+            foreach (int position in positionList)
             {
                 searchListBox.Items.Add(position);
-                    }
+            }
         }
 
-        private void ReplaceText()
+        private void ReplaceText(List<int>positions, string pastedText, string replaceString, string searchString)
         {
-           
-            string searchString = searchBox.Text;
-            string pastedText = pasteBin.Text;
-            string newWord = replaceBox.Text;
-
-            int strLength = searchString.Length;
-
-            char[] delim = { ' ', '\t', '\n'};
-
-            pastedText = pastedText.Trim();
-
-            string[] tokens = pastedText.Split(delim);
-
-            foreach (string s in tokens)
+            int end = searchString.Length;
+           foreach (int pos in positions)
             {
-                int place = pastedText.IndexOf(s);
-
-                if (s.IndexOf(searchString) != -1)
-                {
-                    searchString.Remove(place, strLength);
-                   
-                }
+               pastedText = pastedText.Remove(pos, end).Insert(pos, replaceString);
+               
             }
+            pasteBin.Text = pastedText;
            
 
         }
