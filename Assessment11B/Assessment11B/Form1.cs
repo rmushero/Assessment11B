@@ -125,34 +125,21 @@ namespace Assessment11B
         {
            int count = 0;
             int place = 0;
+            int i = 0;
           
             string searchString = searchBox.Text;
             string pastedText = pasteBin.Text;
-
-            char[] delim = {' '};
-
-            pastedText = pastedText.Trim();
-
-            string[] tokens = pastedText.Split(delim);
-
-            foreach (string s in tokens)
+            List<int> positions = new List<int>();
+            while ((i < pastedText.Length) && (i = pastedText.IndexOf(searchString, i)) != -1 )
             {
-                place = pastedText.IndexOf(s);
-
-                if(s.IndexOf(searchString, place) !=-1)
-                  {
-                    
-                   count++;
-                    
-                    
-                                 
-                   searchListBox.Items.Add(place);
-                
-
-                }
-                //MessageBox.Show(Convert.ToString(pastedText.IndexOf(s)));
+                positions.Add(i);
+                i += searchString.Length;
             }
-            resultsReturned.Text = Convert.ToString(count);
+
+            foreach (int position in positions)
+            {
+                searchListBox.Items.Add(position);
+                    }
         }
 
         private void ReplaceText()
