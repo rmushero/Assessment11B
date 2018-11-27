@@ -35,12 +35,20 @@ namespace Assessment11B
 
         private void searchReplaceButton_Click(object sender, EventArgs e)
         {
-
+            ClearSome();
+            if (replaceBox.Text != "")
+            {
+                ReplaceText();
+            }
+            else
+            {
+                searchText();
+            }
         }
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-
+            ClearAll();
         }
 
         private void verifyPassword()
@@ -111,6 +119,93 @@ namespace Assessment11B
                 passwordBox.BackColor = Color.Green;
             }
             
+        }
+
+        private void searchText()
+        {
+           int count = 0;
+            int place = 0;
+          
+            string searchString = searchBox.Text;
+            string pastedText = pasteBin.Text;
+
+            char[] delim = {' '};
+
+            pastedText = pastedText.Trim();
+
+            string[] tokens = pastedText.Split(delim);
+
+            foreach (string s in tokens)
+            {
+                place = pastedText.IndexOf(s);
+
+                if(s.IndexOf(searchString, place) !=-1)
+                  {
+                    
+                   count++;
+                    
+                    
+                                 
+                   searchListBox.Items.Add(place);
+                
+
+                }
+                //MessageBox.Show(Convert.ToString(pastedText.IndexOf(s)));
+            }
+            resultsReturned.Text = Convert.ToString(count);
+        }
+
+        private void ReplaceText()
+        {
+           
+            string searchString = searchBox.Text;
+            string pastedText = pasteBin.Text;
+            string newWord = replaceBox.Text;
+
+            int strLength = searchString.Length;
+
+            char[] delim = { ' ', '\t', '\n'};
+
+            pastedText = pastedText.Trim();
+
+            string[] tokens = pastedText.Split(delim);
+
+            foreach (string s in tokens)
+            {
+                int place = pastedText.IndexOf(s);
+
+                if (s.IndexOf(searchString) != -1)
+                {
+                    searchString.Remove(place, strLength);
+                   
+                }
+            }
+           
+
+        }
+
+        private void ClearSome()
+        {
+            searchListBox.Items.Clear();
+            
+          
+        }
+
+        private void ClearAll()
+        {
+
+            searchListBox.Items.Clear();
+            passwordBox.Text = "";
+            spaceCheck.Checked = false;
+            uppercaseCheck.Checked = false;
+            lowerCheck.Checked = false;
+            numbersCheck.Checked = false;
+            specialCheck.Checked = false;
+            passwordBox.BackColor = Color.Red;
+            pasteBin.Text = "";
+            searchBox.Text = "";
+            replaceBox.Text = "";
+
         }
        
     }
